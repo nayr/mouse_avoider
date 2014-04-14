@@ -10,6 +10,7 @@ package
 	public class Main extends Sprite 
 	{
 		private var ball:Ball;
+		private var square:Square;
 		private var speed:Number = 5
 		
 		public function Main():void 
@@ -20,7 +21,9 @@ package
 		private function init():void 
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
+			square = new Square();
 			ball = new Ball();
+			addChild(square);
 			addChild(ball);
 			addEventListener(Event.ENTER_FRAME, onEnterFrame);
 			
